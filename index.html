@@ -1,189 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vikash | AI/ML Engineer</title>
 
-<title>Vikash | AI ML Engineer</title>
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
+  <style>
+    /* =============================
+       THEME VARIABLES
+    ============================= */
+    :root{
+      --bg:#0d0d0f;
+      --card:#151518;
+      --text:#f2f2f2;
+      --accent:#00ffd5;
+      --accent2:#7c5cff;
+      --shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
 
-:root{
-    --bg:#0f2027;
-    --card:#ffffff10;
-    --text:white;
-    --accent:#00e6ff;
-}
+    body.light{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#121212;
+      --accent:#2563eb;
+      --accent2:#9333ea;
+      --shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
 
-.light{
-    --bg:#f5f7fa;
-    --card:#ffffff;
-    --text:#111;
-    --accent:#0077ff;
-}
+    /* =============================
+       GLOBAL
+    ============================= */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      transition:0.3s;
+      overflow-x:hidden;
+    }
 
-body{
-    background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);
-    background-size:600% 600%;
-    animation:gradient 18s ease infinite;
-    color:var(--text);
-    overflow-x:hidden;
-    transition:0.4s;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-.light body{
-    background:#f5f7fa;
-}
+    section{
+      padding:80px 10%;
+      max-width:1300px;
+      margin:auto;
+    }
 
-@keyframes gradient{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
+    h2{
+      font-size:32px;
+      margin-bottom:40px;
+      text-align:center;
+    }
 
+    /* =============================
+       CURSOR GLOW
+    ============================= */
+    .cursor{
+      position:fixed;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:var(--accent);
+      pointer-events:none;
+      mix-blend-mode:screen;
+      filter:blur(10px);
+      opacity:.8;
+      z-index:9999;
+      transform:translate(-50%,-50%);
+    }
 
-.cursor{
-    width:350px;
-    height:350px;
-    position:fixed;
-    border-radius:50%;
-    background:radial-gradient(circle,var(--accent),transparent 70%);
-    opacity:0.12;
-    pointer-events:none;
-    transform:translate(-50%,-50%);
-    z-index:-1;
-}
+    /* =============================
+       NAVBAR
+    ============================= */
+    nav{
+      position:sticky;
+      top:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      background:var(--bg);
+      z-index:10;
+    }
 
+    nav h1{
+      font-size:22px;
+      font-weight:700;
+    }
 
+    .nav-links{
+      display:flex;
+      gap:25px;
+      align-items:center;
+    }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 60px;
-    backdrop-filter:blur(12px);
-    background:var(--card);
-    position:sticky;
-    top:0;
-}
+    .toggle{
+      padding:6px 14px;
+      border-radius:20px;
+      cursor:pointer;
+      background:var(--card);
+      box-shadow:var(--shadow);
+    }
 
-nav a{
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:600;
-    color:var(--text);
-}
+    /* =============================
+       HERO
+    ============================= */
+    .hero{
+      min-height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
 
-nav a:hover{
-    color:var(--accent);
-}
+    .hero h1{
+      font-size:50px;
+      margin-bottom:10px;
+    }
 
-.toggle{
-    cursor:pointer;
-    background:var(--accent);
-    color:black;
-    padding:6px 12px;
-    border-radius:6px;
-    font-weight:bold;
-}
+    .typing{
+      color:var(--accent);
+      font-weight:600;
+    }
 
+    .hero p{
+      max-width:650px;
+      margin-top:20px;
+      line-height:1.7;
+    }
 
+    .btns{
+      margin-top:35px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
+    .btn{
+      padding:12px 24px;
+      border-radius:30px;
+      background:var(--accent);
+      color:black;
+      font-weight:600;
+      transition:.3s;
+    }
 
-.hero h1{
-    font-size:60px;
-}
+    .btn:hover{
+      transform:scale(1.08);
+    }
 
-.typing{
-    color:var(--accent);
-    font-weight:bold;
-    font-size:22px;
-    margin-top:15px;
-}
+    /* =============================
+       CARDS
+    ============================= */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
 
+    .card{
+      background:var(--card);
+      padding:30px;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      transition:.35s;
+      position:relative;
+      overflow:hidden;
+    }
 
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px var(--accent);
+    }
 
-.btn{
-    margin-top:25px;
-    padding:10px 20px;
-    background:var(--accent);
-    color:black;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
+    .card h3{
+      margin-bottom:10px;
+      color:var(--accent);
+    }
 
+    .card p{
+      line-height:1.6;
+      font-size:14px;
+    }
 
+    /* =============================
+       SKILLS
+    ============================= */
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+    }
 
-section{
-    padding:90px 60px;
-    max-width:1200px;
-    margin:auto;
-}
+    .skill{
+      background:var(--card);
+      padding:10px 18px;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+    }
 
-h2{
-    margin-bottom:35px;
-    color:var(--accent);
-}
+    /* =============================
+       CONTACT
+    ============================= */
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:30px;
+      font-weight:600;
+    }
 
+    footer{
+      text-align:center;
+      padding:40px;
+      opacity:.7;
+    }
 
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    padding:25px;
-    border-radius:14px;
-    background:var(--card);
-    backdrop-filter:blur(10px);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px var(--accent);
-}
-
-.card p{
-    font-size:14px;
-    line-height:1.6;
-}
-
-
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:black;
-    font-size:14px;
-}
-
-
-
-@media(max-width:600px){
-.hero h1{font-size:38px;}
-section{padding:60px 20px;}
-}
-
-</style>
+    /* Responsive */
+    @media(max-width:600px){
+      .hero h1{font-size:36px;}
+    }
+  </style>
 </head>
 
 <body>
@@ -192,133 +244,129 @@ section{padding:60px 20px;}
 
 <!-- NAV -->
 <nav>
-<b>Vikash Portfolio</b>
-
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<span class="toggle" onclick="toggleMode()">☀ / 🌙</span>
-</div>
+  <h1>Vikash</h1>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <div class="toggle" onclick="toggleTheme()">🌙/☀️</div>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
+  <h1>Hi, I'm Vikash 👋</h1>
+  <h3><span class="typing"></span></h3>
 
-<h1>Hi, I'm Vikash 👋</h1>
+  <p>
+    AI/ML enthusiast focused on solving real-world problems using Machine Learning, 
+    Data Science and Generative AI. I build scalable, production-ready solutions 
+    that create measurable business impact.
+  </p>
 
-<div class="typing" id="typing"></div>
-
-<a href="resume.pdf" class="btn" download>Download Resume</a>
-
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-<h2>About Me</h2>
-<p>
-Computer Science graduate passionate about AI & ML. I build real-world ML solutions like customer segmentation, churn prediction, and currently developing a RAG-based AI assistant. I love solving business problems with data-driven intelligence.
-</p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card">Python, Pandas, NumPy</div>
-<div class="card">Machine Learning & Deep Learning</div>
-<div class="card">Scikit-Learn, TensorFlow</div>
-<div class="card">LangChain, RAG, Vector DB</div>
-<div class="card">SQL, Data Pipelines</div>
-<div class="card">Git, AWS, Deployment</div>
-</div>
+  <div class="btns">
+    <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
+    <a class="btn" href="#projects">View Projects</a>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Projects</h2>
+  <h2>Projects</h2>
 
-<div class="grid">
+  <div class="grid">
 
-<div class="card">
-<h3>Customer Segmentation</h3>
-<p>
-Problem → Mall couldn't target customers.  
-Solution → KMeans + GMM clustering.  
-Result → Better marketing decisions.
-</p>
-</div>
+    <div class="card">
+      <h3>Customer Churn Prediction</h3>
+      <p>
+        <b>Problem:</b> Telecom companies losing customers without warning.<br><br>
+        <b>Solution:</b> Built ML model (Logistic Regression, Random Forest) with feature engineering and SMOTE.<br><br>
+        <b>Result:</b> 89% accuracy and enabled early churn detection.
+      </p>
+    </div>
 
-<div class="card">
-<h3>Churn Prediction</h3>
-<p>
-Problem → Users leaving service.  
-Solution → Supervised ML models.  
-Result → 85%+ prediction accuracy.
-</p>
-</div>
+    <div class="card">
+      <h3>Customer Segmentation</h3>
+      <p>
+        <b>Problem:</b> Marketing campaigns not targeted.<br><br>
+        <b>Solution:</b> K-Means clustering to group users based on behavior.<br><br>
+        <b>Result:</b> Increased marketing efficiency by identifying 4 key segments.
+      </p>
+    </div>
 
-<div class="card">
-<h3>RAG AI Assistant</h3>
-<p>
-Problem → LLM hallucinations.  
-Solution → Retrieval-Augmented Generation.  
-Result → Context-aware reliable answers.
-</p>
-</div>
+    <div class="card">
+      <h3>RAG Based AI Chatbot</h3>
+      <p>
+        <b>Problem:</b> Users need instant knowledge retrieval.<br><br>
+        <b>Solution:</b> Built Retrieval-Augmented Generation using embeddings + LLM.<br><br>
+        <b>Result:</b> Context-aware answers with 40% better accuracy.
+      </p>
+    </div>
 
-</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">Machine Learning</div>
+    <div class="skill">Deep Learning</div>
+    <div class="skill">Generative AI</div>
+    <div class="skill">REST APIs</div>
+    <div class="skill">Automation</div>
+    <div class="skill">System Integration</div>
+    <div class="skill">Docker</div>
+    <div class="skill">Git</div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Contact</h2>
-<p>Email: vikashmahesh27@gmail.com</p>
+  <h2>Contact</h2>
+
+  <div class="contact-links">
+    <a href="mailto:vikashmahesh27@gmail.com">Email</a>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+  </div>
 </section>
 
 <footer>
-© 2026 Vikash | Built with ❤️
+  © 2025 Vikash • Built with ❤️
 </footer>
 
 <script>
+  // typing effect
+  const words=["AI Engineer","ML Developer","Generative AI Enthusiast"];
+  let i=0,j=0,current="",isDeleting=false;
 
+  function type(){
+    current=words[i];
+    if(!isDeleting){
+      document.querySelector(".typing").textContent=current.substring(0,j++);
+      if(j>current.length) isDeleting=true;
+    }else{
+      document.querySelector(".typing").textContent=current.substring(0,j--);
+      if(j<0){isDeleting=false;i=(i+1)%words.length;}
+    }
+    setTimeout(type,100);
+  }
+  type();
 
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
+  // theme toggle
+  function toggleTheme(){
+    document.body.classList.toggle("light");
+  }
 
-
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
-
-
-const texts=[
-"AI / ML Engineer",
-"GenAI & RAG Developer",
-"Python Developer",
-"Data Science Enthusiast"
-];
-
-let i=0,j=0,cur="",isDeleting=false;
-
-function type(){
-cur=texts[i];
-if(!isDeleting){
-document.getElementById("typing").textContent=cur.slice(0,++j);
-if(j===cur.length)isDeleting=true;
-}else{
-document.getElementById("typing").textContent=cur.slice(0,--j);
-if(j===0){isDeleting=false;i=(i+1)%texts.length;}
-}
-setTimeout(type,isDeleting?40:90);
-}
-type();
-
+  // cursor glow
+  const cursor=document.querySelector(".cursor");
+  document.addEventListener("mousemove",e=>{
+    cursor.style.left=e.clientX+"px";
+    cursor.style.top=e.clientY+"px";
+  });
 </script>
 
 </body>
