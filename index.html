@@ -1,255 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vikash | AI/ML Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikash | AI/ML Engineer</title>
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* =============================
-       THEME VARIABLES
-    ============================= */
-    :root{
-      --bg:#0d0d0f;
-      --card:#151518;
-      --text:#f2f2f2;
-      --accent:#00ffd5;
-      --accent2:#7c5cff;
-      --shadow:0 10px 30px rgba(0,0,0,0.4);
-    }
+<style>
+/* ================= THEME ================= */
+:root{
+  --bg:#0f1115;
+  --card:#1b1e25;
+  --text:#f2f2f2;
+  --accent:#00ffd5;
+  --accent2:#6c63ff;
+  --shadow:0 10px 30px rgba(0,0,0,.4);
+}
 
-    body.light{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --text:#121212;
-      --accent:#2563eb;
-      --accent2:#9333ea;
-      --shadow:0 10px 30px rgba(0,0,0,0.1);
-    }
+body.light{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#111;
+  --accent:#2563eb;
+  --accent2:#7c3aed;
+  --shadow:0 10px 20px rgba(0,0,0,.1);
+}
 
-    /* =============================
-       GLOBAL
-    ============================= */
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    body{
-      background:var(--bg);
-      color:var(--text);
-      transition:0.3s;
-      overflow-x:hidden;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+  scroll-behavior:smooth;
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+section{
+  padding:80px 10%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    section{
-      padding:80px 10%;
-      max-width:1300px;
-      margin:auto;
-    }
+h2{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:32px;
+}
 
-    h2{
-      font-size:32px;
-      margin-bottom:40px;
-      text-align:center;
-    }
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 10%;
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:10;
+}
 
-    /* =============================
-       CURSOR GLOW
-    ============================= */
-    .cursor{
-      position:fixed;
-      width:20px;
-      height:20px;
-      border-radius:50%;
-      background:var(--accent);
-      pointer-events:none;
-      mix-blend-mode:screen;
-      filter:blur(10px);
-      opacity:.8;
-      z-index:9999;
-      transform:translate(-50%,-50%);
-    }
+.nav-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
 
-    /* =============================
-       NAVBAR
-    ============================= */
-    nav{
-      position:sticky;
-      top:0;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 10%;
-      background:var(--bg);
-      z-index:10;
-    }
+.toggle-btn{
+  padding:6px 14px;
+  border-radius:20px;
+  background:var(--card);
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  font-size:14px;
+  font-weight:600;
+}
 
-    nav h1{
-      font-size:22px;
-      font-weight:700;
-    }
+/* ================= HERO ================= */
+.hero{
+  text-align:center;
+  min-height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
 
-    .nav-links{
-      display:flex;
-      gap:25px;
-      align-items:center;
-    }
+.hero h1{
+  font-size:52px;
+}
 
-    .toggle{
-      padding:6px 14px;
-      border-radius:20px;
-      cursor:pointer;
-      background:var(--card);
-      box-shadow:var(--shadow);
-    }
+.typing{
+  color:var(--accent);
+  font-weight:600;
+}
 
-    /* =============================
-       HERO
-    ============================= */
-    .hero{
-      min-height:90vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
+.hero p{
+  max-width:650px;
+  margin:20px auto;
+  line-height:1.7;
+}
 
-    .hero h1{
-      font-size:50px;
-      margin-bottom:10px;
-    }
+.btn{
+  padding:12px 26px;
+  border-radius:30px;
+  background:var(--accent);
+  color:black;
+  font-weight:600;
+  display:inline-block;
+  margin-top:25px;
+  transition:.3s;
+}
 
-    .typing{
-      color:var(--accent);
-      font-weight:600;
-    }
+.btn:hover{
+  transform:scale(1.08);
+}
 
-    .hero p{
-      max-width:650px;
-      margin-top:20px;
-      line-height:1.7;
-    }
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
 
-    .btns{
-      margin-top:35px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
+/* ================= CARDS ================= */
+.card{
+  background:var(--card);
+  padding:28px;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  transition:.35s;
+}
 
-    .btn{
-      padding:12px 24px;
-      border-radius:30px;
-      background:var(--accent);
-      color:black;
-      font-weight:600;
-      transition:.3s;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 20px var(--accent);
+}
 
-    .btn:hover{
-      transform:scale(1.08);
-    }
+/* ================= SKILLS ================= */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
 
-    /* =============================
-       CARDS
-    ============================= */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
+.skill{
+  padding:10px 18px;
+  border-radius:20px;
+  background:var(--card);
+  transition:.3s;
+  cursor:pointer;
+}
 
-    .card{
-      background:var(--card);
-      padding:30px;
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      transition:.35s;
-      position:relative;
-      overflow:hidden;
-    }
+.skill:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 15px var(--accent);
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 0 25px var(--accent);
-    }
+/* ================= CONTACT ================= */
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
 
-    .card h3{
-      margin-bottom:10px;
-      color:var(--accent);
-    }
+.contact-links a{
+  background:var(--card);
+  padding:12px 22px;
+  border-radius:25px;
+  transition:.3s;
+}
 
-    .card p{
-      line-height:1.6;
-      font-size:14px;
-    }
+.contact-links a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px var(--accent);
+}
 
-    /* =============================
-       SKILLS
-    ============================= */
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-    }
-
-    .skill{
-      background:var(--card);
-      padding:10px 18px;
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      font-size:14px;
-    }
-
-    /* =============================
-       CONTACT
-    ============================= */
-    .contact-links{
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      margin-top:30px;
-      font-weight:600;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px;
-      opacity:.7;
-    }
-
-    /* Responsive */
-    @media(max-width:600px){
-      .hero h1{font-size:36px;}
-    }
-  </style>
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.6;
+}
+</style>
 </head>
 
 <body>
 
-<div class="cursor"></div>
-
 <!-- NAV -->
 <nav>
-  <h1>Vikash</h1>
+  <h3>Vikash</h3>
   <div class="nav-links">
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-    <div class="toggle" onclick="toggleTheme()">🌙/☀️</div>
+    <div class="toggle-btn" onclick="toggleTheme()">Dark / Light</div>
   </div>
 </nav>
 
@@ -257,116 +209,122 @@
 <section class="hero">
   <h1>Hi, I'm Vikash 👋</h1>
   <h3><span class="typing"></span></h3>
-
   <p>
-    AI/ML enthusiast focused on solving real-world problems using Machine Learning, 
-    Data Science and Generative AI. I build scalable, production-ready solutions 
-    that create measurable business impact.
+    Passionate AI/ML engineer building practical systems using Machine Learning,
+    Generative AI, and real-world data solutions.
   </p>
+  <a class="btn" href="resume.pdf">Download Resume</a>
+</section>
 
-  <div class="btns">
-    <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
-    <a class="btn" href="#projects">View Projects</a>
-  </div>
+<!-- ABOUT -->
+<section>
+  <h2>About Me</h2>
+  <p style="text-align:center; max-width:750px; margin:auto;">
+    I focus on building scalable AI systems that solve real business problems.
+    My experience includes customer analytics, predictive modeling, automation,
+    and Generative AI applications. I enjoy working on complete pipelines —
+    from data preprocessing to deployment.
+  </p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Projects</h2>
+<h2>Projects</h2>
+<div class="grid">
 
-  <div class="grid">
+<div class="card">
+<h3>Customer Churn Prediction</h3>
+<p>Built ML pipeline to predict churn with 89% accuracy using Logistic Regression and Random Forest.</p>
+</div>
 
-    <div class="card">
-      <h3>Customer Churn Prediction</h3>
-      <p>
-        <b>Problem:</b> Telecom companies losing customers without warning.<br><br>
-        <b>Solution:</b> Built ML model (Logistic Regression, Random Forest) with feature engineering and SMOTE.<br><br>
-        <b>Result:</b> 89% accuracy and enabled early churn detection.
-      </p>
-    </div>
+<div class="card">
+<h3>Customer Segmentation</h3>
+<p>Used K-Means clustering to segment mall customers and optimize marketing strategies.</p>
+</div>
 
-    <div class="card">
-      <h3>Customer Segmentation</h3>
-      <p>
-        <b>Problem:</b> Marketing campaigns not targeted.<br><br>
-        <b>Solution:</b> K-Means clustering to group users based on behavior.<br><br>
-        <b>Result:</b> Increased marketing efficiency by identifying 4 key segments.
-      </p>
-    </div>
+<div class="card">
+<h3>RAG AI Assistant</h3>
+<p>Developing Retrieval-Augmented chatbot using embeddings + LLM for intelligent document search.</p>
+</div>
 
-    <div class="card">
-      <h3>RAG Based AI Chatbot</h3>
-      <p>
-        <b>Problem:</b> Users need instant knowledge retrieval.<br><br>
-        <b>Solution:</b> Built Retrieval-Augmented Generation using embeddings + LLM.<br><br>
-        <b>Result:</b> Context-aware answers with 40% better accuracy.
-      </p>
-    </div>
-
-  </div>
+</div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2>Skills</h2>
+<h2>Skills</h2>
 
-  <div class="skills">
-    <div class="skill">Python</div>
-    <div class="skill">Machine Learning</div>
-    <div class="skill">Deep Learning</div>
-    <div class="skill">Generative AI</div>
-    <div class="skill">REST APIs</div>
-    <div class="skill">Automation</div>
-    <div class="skill">System Integration</div>
-    <div class="skill">Docker</div>
-    <div class="skill">Git</div>
-  </div>
+<div class="grid">
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>
+Scikit-learn • Supervised Learning • Unsupervised Learning •
+K-Means Clustering • Classification • Regression • Model Evaluation • Feature Engineering
+</p>
+</div>
+
+<div class="card">
+<h3>Data Handling</h3>
+<p>
+Python • Pandas • NumPy • Data Cleaning • Data Preprocessing • Exploratory Data Analysis • SQL (Basics)
+</p>
+</div>
+
+<div class="card">
+<h3>Integration & Automation</h3>
+<p>
+REST APIs (Basics) • Python Automation • System Integration • Data Pipelines (Basic)
+</p>
+</div>
+
+<div class="card">
+<h3>Tools</h3>
+<p>
+Git • GitHub • Google Colab • Jupyter Notebook • Streamlit • VS Code • Linux (Basics)
+</p>
+</div>
+
+<div class="card">
+<h3>Core Strengths</h3>
+<p>
+Problem Solving • Debugging • Logical Thinking • Quick Learning • Documentation • Clean Code Practices
+</p>
+</div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-
-  <div class="contact-links">
-    <a href="mailto:vikashmahesh27@gmail.com">Email</a>
-    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-  </div>
+<h2>Contact</h2>
+<div class="contact-links">
+<a href="mailto:vikashmahesh27@gmail.com">Email</a>
+<a href="https://github.com/Vikash4646">GitHub</a>
+<a href="https://linkedin.com/in/vikash-mahudeesvaran">LinkedIn</a>
+</div>
 </section>
 
-<footer>
-  © 2025 Vikash • Built with ❤️
-</footer>
+<footer>© 2025 Vikash</footer>
 
 <script>
-  // typing effect
-  const words=["AI Engineer","ML Developer","Generative AI Enthusiast"];
-  let i=0,j=0,current="",isDeleting=false;
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
 
-  function type(){
-    current=words[i];
-    if(!isDeleting){
-      document.querySelector(".typing").textContent=current.substring(0,j++);
-      if(j>current.length) isDeleting=true;
-    }else{
-      document.querySelector(".typing").textContent=current.substring(0,j--);
-      if(j<0){isDeleting=false;i=(i+1)%words.length;}
-    }
-    setTimeout(type,100);
-  }
-  type();
+const words=["AI Engineer","ML Developer","GenAI Enthusiast"];
+let i=0,j=0,del=false;
 
-  // theme toggle
-  function toggleTheme(){
-    document.body.classList.toggle("light");
-  }
+function type(){
+  let word=words[i];
+  document.querySelector(".typing").textContent=word.slice(0,j);
 
-  // cursor glow
-  const cursor=document.querySelector(".cursor");
-  document.addEventListener("mousemove",e=>{
-    cursor.style.left=e.clientX+"px";
-    cursor.style.top=e.clientY+"px";
-  });
+  if(!del){ j++; if(j>word.length){ del=true; } }
+  else{ j--; if(j==0){ del=false; i=(i+1)%words.length;} }
+
+  setTimeout(type,90);
+}
+type();
 </script>
 
 </body>
